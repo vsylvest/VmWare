@@ -1,6 +1,6 @@
 ---
-- hosts: hosts
-  connection: local
+- name: Deploy RHEL7 on VMware
+  hosts: localhost
   vars:
     vsphere_vcenter_hostname: "vcenter1"
     vsphere_vcenter_username: "root"
