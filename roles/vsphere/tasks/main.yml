@@ -10,9 +10,7 @@
     guest: "{{ inventory_hostname }}"
     from_template: yes
     template_src: "{{ vsphere_template_name }}"
-    esxi:
-      datacenter: "{{ vsphere_datacenter_name }}"
-      hostname: "{{ vsphere_esxi_host }}"
+    cluster: Cluster01
     power_on_after_clone: False
     validate_certs: no
     
@@ -44,9 +42,7 @@
       num_cpus: "{{ cpu | default(2) }}"
       osid: Guest
       scsi: paravirtual
-    esxi:
-      datacenter: "{{ vsphere_datacenter_name }}"
-      hostname: "{{ vsphere_esxi_host }}"
+    cluster: Cluster01
 
 - name: Power on the Virtual machines
   vsphere_guest:
