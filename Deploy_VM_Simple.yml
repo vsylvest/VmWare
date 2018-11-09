@@ -14,7 +14,7 @@
       name: Rhel7
       state: poweredon
       guest_id: rhel7-vmw
-      cluster Cluster01
+      cluster: Cluster01
       disk:
       - size_gb: 10
         type: thin
