@@ -1,8 +1,8 @@
 ---
 - name: Deploy RHEL7 on VMware
   hosts: localhost
-  vars:
-    esxi_hostname:
+  vars: 
+    vcenter_ip: vcenter-17b7.rhpds.opentlc.com
   tasks: 
   - name: Create a virtual machine on given ESXi hostname
     vmware_guest:
