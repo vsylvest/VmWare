@@ -12,7 +12,7 @@ vsphere_vcenter_password: "r3dh4t1!"
 vsphere_datacenter_name: "DC01"
 
 # Name or IP address of the ESXi server the created virtual machines will be associated with
-vsphere_esxi_host: "esx1.example.com"
+vsphere_esxi_host: "192.168.0.51"
 
 # Datastore in the vCenter where the hard disks of the virtual machines will be stored
 vsphere_datastore_name: "vshpere1-datastore"

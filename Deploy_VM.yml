@@ -6,7 +6,7 @@
     vsphere_vcenter_username: "root"
     vsphere_vcenter_password: "r3dh4t1!"
     vsphere_datacenter_name: "DC01"
-    vsphere_esxi_host: "vsphere1.localdomain"
+    vsphere_esxi_host: "192.168.0.51"
     vsphere_datastore_name: "vsphere1-datastore"
     vsphere_template_name: "rhel7-vmw"
   roles:
