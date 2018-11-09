@@ -1,0 +1,34 @@
+---
+- name: Deploy RHEL7 on VMware
+  hosts: localhost
+  vars:
+    esxi_hostname:
+  tasks: 
+  - name: Create a virtual machine on given ESXi hostname
+    vmware_guest:
+      hostname: "{{ vcenter_ip }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      folder: /DC01/vm/
+      name: Rhel7
+      state: poweredon
+      guest_id: rhel7-vmw
+      cluster Cluster01
+      disk:
+      - size_gb: 10
+        type: thin
+        datastore: vsphere1-datastore
+      hardware:
+        memory_mb: 512
+        num_cpus: 4
+        scsi: paravirtual
+      networks:
+      - name: VM Network
+        mac: aa:bb:dd:aa:00:14
+        ip: 10.10.10.100
+        netmask: 255.255.255.0
+        device_type: vmxnet3
+      wait_for_ip_address: yes
+    delegate_to: localhost
+    register: deploy_vm
