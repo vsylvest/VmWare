@@ -14,12 +14,14 @@
       datacenter: "{{ vsphere_datacenter_name }}"
       hostname: "{{ vsphere_esxi_host }}"
     power_on_after_clone: False
-
+    validate_certs: no
+    
 - name: Reconfigure the machines based on the specifications provided
   vsphere_guest:
     vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
     username: "{{ vsphere_vcenter_username }}"
     password: "{{ vsphere_vcenter_password }}"
+    validate_certs: no
     guest: "{{ inventory_hostname }}"
     state: reconfigured
     force: True
@@ -53,7 +55,8 @@
     password: "{{ vsphere_vcenter_password }}"
     guest: "{{ inventory_hostname }}"
     state: powered_on
-
+    validate_certs: no
+    
 - name: Wait for the virtual machines to boot and  acquire the IP
   vsphere_guest:
     vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
@@ -61,6 +64,7 @@
     password: "{{ vsphere_vcenter_password }}"
     guest: "{{ inventory_hostname }}"
     vmware_guest_facts: Yes
+    validate_certs: no
   until:  hw_eth0.ipaddresses[0]  is defined 
   retries: 10
   delay: 20 
