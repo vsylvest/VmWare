@@ -9,7 +9,7 @@
     vsphere_esxi_host: "esxi1"
     vsphere_datastore_name: "vsphere1-datastore"
     vsphere_template_name: "rhel7-vmw"
-
+    validate_certs: no
   roles:
     - vsphere
 
