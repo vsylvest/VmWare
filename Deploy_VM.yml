@@ -2,7 +2,7 @@
 - name: Deploy RHEL7 on VMware
   hosts: localhost
   vars:
-    vsphere_vcenter_hostname: "vcenter1"
+    vsphere_vcenter_hostname: "vcenter-17b7.rhpds.opentlc.com"
     vsphere_vcenter_username: "root"
     vsphere_vcenter_password: "r3dh4t1!"
     vsphere_datacenter_name: "DC01"
