@@ -11,6 +11,7 @@
     from_template: yes
     template_src: "{{ vsphere_template_name }}"
     cluster: Cluster01
+    resource_pool: "/Test01"
     power_on_after_clone: False
     validate_certs: no
     
@@ -43,6 +44,7 @@
       osid: Guest
       scsi: paravirtual
     cluster: Cluster01
+    resource_pool: "/Test01"
 
 - name: Power on the Virtual machines
   vsphere_guest:
