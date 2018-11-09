@@ -58,7 +58,7 @@
     validate_certs: no
     
 - name: Wait for the virtual machines to boot and  acquire the IP
-  vmware_guest:
+  vsphere_guest:
     vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
     username: "{{ vsphere_vcenter_username }}"
     password: "{{ vsphere_vcenter_password }}"
