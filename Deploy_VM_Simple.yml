@@ -9,7 +9,7 @@
       validate_certs: False
       folder: /DC01/vm/
       name: Rhel7
-      datacentre: DC01
+      datacenter: DC01
       state: poweredon
       guest_id: rhel7-1
       cluster: Cluster01
