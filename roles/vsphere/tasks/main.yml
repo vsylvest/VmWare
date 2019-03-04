@@ -7,7 +7,7 @@
     vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
     username: "{{ vsphere_vcenter_username }}"
     password: "{{ vsphere_vcenter_password }}"
-    guest: "{{ inventory_hostname }}"
+    guest: "rhel-01"
     from_template: yes
     template_src: "{{ vsphere_template_name }}"
     esxi:
@@ -22,7 +22,7 @@
     username: "{{ vsphere_vcenter_username }}"
     password: "{{ vsphere_vcenter_password }}"
     validate_certs: no
-    guest: "{{ inventory_hostname }}"
+    guest: "rhel-01
     state: reconfigured
     force: True
     vm_extra_config:
@@ -62,7 +62,7 @@
     vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
     username: "{{ vsphere_vcenter_username }}"
     password: "{{ vsphere_vcenter_password }}"
-    guest: "{{ inventory_hostname }}"
+    guest: "rhel-01"
     vmware_guest_facts: Yes
     validate_certs: no
   until:  hw_eth0.ipaddresses[0]  is defined 
@@ -79,7 +79,7 @@
   lineinfile:
     dest: "{{ inventory_file }}"
     regexp: "^{{ inventory_hostname }} (?!ansible_ssh_host=)(.*)"
-    line: '{{ inventory_hostname }} ansible_ssh_host={{ hw_eth0.ipaddresses[0] }} \1'
+    line: 'rhel-01 ansible_ssh_host={{ hw_eth0.ipaddresses[0] }} \1'
     backrefs: True
     state: present
 
@@ -87,7 +87,7 @@
   lineinfile:
     dest: "{{ inventory_file }}"
     regexp: '^{{ inventory_hostname }} ansible_ssh_host=([0-9.]+)\s+(.*)$'
-    line: '{{ inventory_hostname }} ansible_ssh_host={{ hw_eth0.ipaddresses[0] }} \2'
+    line: 'rhel-01 ansible_ssh_host={{ hw_eth0.ipaddresses[0] }} \2'
     backrefs: True
     state: present
 
