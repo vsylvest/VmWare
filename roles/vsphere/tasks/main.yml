@@ -78,7 +78,7 @@
 - name: Add the acquired IP address to the inventory file for each virtual machine
   lineinfile:
     dest: "{{ inventory_file }}"
-    regexp: "^{{ inventory_hostname }} (?!ansible_ssh_host=)(.*)"
+    regexp: "^rhel-01 (?!ansible_ssh_host=)(.*)"
     line: 'rhel-01 ansible_ssh_host={{ hw_eth0.ipaddresses[0] }} \1'
     backrefs: True
     state: present
@@ -86,9 +86,7 @@
 - name: Replace the new IP address in the inventory file if IP got changed
   lineinfile:
     dest: "{{ inventory_file }}"
-    regexp: '^{{ inventory_hostname }} ansible_ssh_host=([0-9.]+)\s+(.*)$'
+    regexp: '^rhel-01 ansible_ssh_host=([0-9.]+)\s+(.*)$'
     line: 'rhel-01 ansible_ssh_host={{ hw_eth0.ipaddresses[0] }} \2'
     backrefs: True
     state: present
-
-...
