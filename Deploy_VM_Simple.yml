@@ -16,7 +16,7 @@
       disk:
       - size_gb: 10
         type: thin
-        datastore: vsphere1-datastore
+        datastore: Datastore
       hardware:
         memory_mb: 512
         num_cpus: 4
