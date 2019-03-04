@@ -53,7 +53,7 @@
     vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
     username: "{{ vsphere_vcenter_username }}"
     password: "{{ vsphere_vcenter_password }}"
-    guest: "{{ inventory_hostname }}"
+    guest: "rhel-01"
     state: powered_on
     validate_certs: no
     
