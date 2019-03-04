@@ -2,7 +2,7 @@
 - name: Deploy RHEL7 on VMware
   hosts: localhost
   vars: 
-    vcenter_ip: vcenter-17b7.rhpds.opentlc.com
+    vcenter_ip: vcenter-a30c.rhpds.opentlc.com
   tasks: 
   - name: Create a virtual machine on given ESXi hostname
     vmware_guest:
@@ -13,7 +13,7 @@
       folder: /DC01/vm/
       name: Rhel7
       state: poweredon
-      guest_id: rhel7-vmw
+      guest_id: rhel7-1
       cluster: Cluster01
       disk:
       - size_gb: 10
