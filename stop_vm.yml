@@ -1,0 +1,20 @@
+---
+- name: Deploy RHEL7 on VMware
+  hosts: localhost
+  vars:
+    vsphere_vcenter_hostname: "vcenter-a30c.rhpds.opentlc.com"
+    vsphere_vcenter_username: "root"
+    vsphere_vcenter_password: "r3dh4t1!"
+    vsphere_datacenter_name: "DC01"
+    vsphere_esxi_host: "172.16.0.30"
+    vsphere_datastore_name: "vsphere1-datastore"
+    vsphere_template_name: "rhel7.1"
+  tasks: 
+    - name: Power on the Virtual machines
+      vsphere_guest:
+        vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
+        username: "{{ vsphere_vcenter_username }}"
+        password: "{{ vsphere_vcenter_password }}"
+        guest: "rhel-01"
+        state: powered_on
+        validate_certs: no
