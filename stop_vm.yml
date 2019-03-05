@@ -2,7 +2,6 @@
 - name: Deploy RHEL7 on VMware
   hosts: localhost
   vars:
-    deprecation_warnings: False
     vsphere_vcenter_hostname: "vcenter-a30c.rhpds.opentlc.com"
     vsphere_vcenter_username: "root"
     vsphere_vcenter_password: "r3dh4t1!"
