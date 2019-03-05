@@ -10,11 +10,11 @@
     vsphere_datastore_name: "vsphere1-datastore"
     vsphere_template_name: "rhel7.1"
   tasks: 
-    - name: Power on the Virtual machines
+    - name: Power off the Virtual machines
       vsphere_guest:
         vcenter_hostname: "{{ vsphere_vcenter_hostname }}" 
         username: "{{ vsphere_vcenter_username }}"
         password: "{{ vsphere_vcenter_password }}"
         guest: "rhel-01"
-        state: powered_on
+        state: powered_off
         validate_certs: no
